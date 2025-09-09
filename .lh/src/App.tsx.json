@@ -1,0 +1,26 @@
+{
+    "sourceFile": "src/App.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1757096854022,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1757097391509,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,20 +3,23 @@\n import { TooltipProvider } from \"@/components/ui/tooltip\";\n import { QueryClient, QueryClientProvider } from \"@tanstack/react-query\";\n import { BrowserRouter, Routes, Route } from \"react-router-dom\";\n import { AuthProvider, useAuth } from \"@/hooks/useAuth\";\n+import { useAdmin } from \"@/hooks/useAdmin\";\n import Layout from \"@/components/Layout\";\n import Login from \"./pages/Login\";\n import Index from \"./pages/Index\";\n import NovaPRT from \"./pages/NovaPRT\";\n import EditarPRT from \"./pages/EditarPRT\";\n import ListaProdutividade from \"./pages/ListaProdutividade\";\n+import AdminPanel from \"./pages/AdminPanel\";\n import NotFound from \"./pages/NotFound\";\n \n const queryClient = new QueryClient();\n \n function AppContent() {\n   const { user, loading } = useAuth();\n+  const { isAdmin } = useAdmin();\n \n   if (loading) {\n     return (\n       <div className=\"min-h-screen flex items-center justify-center\">\n@@ -39,8 +42,9 @@\n         <Route path=\"/\" element={<Index />} />\n         <Route path=\"/nova-prt\" element={<NovaPRT />} />\n         <Route path=\"/editar-prt/:id\" element={<EditarPRT />} />\n         <Route path=\"/lista\" element={<ListaProdutividade />} />\n+        {isAdmin && <Route path=\"/admin\" element={<AdminPanel />} />}\n         {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL \"*\" ROUTE */}\n         <Route path=\"*\" element={<NotFound />} />\n       </Routes>\n     </Layout>\n"
+                },
+                {
+                    "date": 1757097612575,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,8 +11,9 @@\n import NovaPRT from \"./pages/NovaPRT\";\n import EditarPRT from \"./pages/EditarPRT\";\n import ListaProdutividade from \"./pages/ListaProdutividade\";\n import AdminPanel from \"./pages/AdminPanel\";\n+import SetupAdmin from \"./pages/SetupAdmin\";\n import NotFound from \"./pages/NotFound\";\n \n const queryClient = new QueryClient();\n \n@@ -30,8 +31,9 @@\n \n   if (!user) {\n     return (\n       <Routes>\n+        <Route path=\"/setup-admin\" element={<SetupAdmin />} />\n         <Route path=\"*\" element={<Login />} />\n       </Routes>\n     );\n   }\n"
+                }
+            ],
+            "date": 1757096854022,
+            "name": "Commit-0",
+            "content": "import { Toaster } from \"@/components/ui/toaster\";\nimport { Toaster as Sonner } from \"@/components/ui/sonner\";\nimport { TooltipProvider } from \"@/components/ui/tooltip\";\nimport { QueryClient, QueryClientProvider } from \"@tanstack/react-query\";\nimport { BrowserRouter, Routes, Route } from \"react-router-dom\";\nimport { AuthProvider, useAuth } from \"@/hooks/useAuth\";\nimport Layout from \"@/components/Layout\";\nimport Login from \"./pages/Login\";\nimport Index from \"./pages/Index\";\nimport NovaPRT from \"./pages/NovaPRT\";\nimport EditarPRT from \"./pages/EditarPRT\";\nimport ListaProdutividade from \"./pages/ListaProdutividade\";\nimport NotFound from \"./pages/NotFound\";\n\nconst queryClient = new QueryClient();\n\nfunction AppContent() {\n  const { user, loading } = useAuth();\n\n  if (loading) {\n    return (\n      <div className=\"min-h-screen flex items-center justify-center\">\n        <div>Carregando...</div>\n      </div>\n    );\n  }\n\n  if (!user) {\n    return (\n      <Routes>\n        <Route path=\"*\" element={<Login />} />\n      </Routes>\n    );\n  }\n\n  return (\n    <Layout>\n      <Routes>\n        <Route path=\"/\" element={<Index />} />\n        <Route path=\"/nova-prt\" element={<NovaPRT />} />\n        <Route path=\"/editar-prt/:id\" element={<EditarPRT />} />\n        <Route path=\"/lista\" element={<ListaProdutividade />} />\n        {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL \"*\" ROUTE */}\n        <Route path=\"*\" element={<NotFound />} />\n      </Routes>\n    </Layout>\n  );\n}\n\nconst App = () => (\n  <QueryClientProvider client={queryClient}>\n    <AuthProvider>\n      <TooltipProvider>\n        <Toaster />\n        <Sonner />\n        <BrowserRouter>\n          <AppContent />\n        </BrowserRouter>\n      </TooltipProvider>\n    </AuthProvider>\n  </QueryClientProvider>\n);\n\nexport default App;\n"
+        }
+    ]
+}

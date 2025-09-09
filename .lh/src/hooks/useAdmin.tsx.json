@@ -1,0 +1,22 @@
+{
+    "sourceFile": "src/hooks/useAdmin.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1757097391503,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1757097612564,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,11 +2,11 @@\n \r\n export function useAdmin() {\r\n   const { user } = useAuth();\r\n   \r\n-  const isAdmin = user?.email === 'kezia@fiscal.com';\r\n+  const isAdmin = user?.email === 'kezia@fiscal.com' || user?.email === 'adm@fiscal.com';\r\n   \r\n   return {\r\n     isAdmin,\r\n-    adminEmail: 'kezia@fiscal.com'\r\n+    adminEmails: ['kezia@fiscal.com', 'adm@fiscal.com']\r\n   };\r\n }\r\n"
+                }
+            ],
+            "date": 1757097391503,
+            "name": "Commit-0",
+            "content": "import { useAuth } from './useAuth';\r\n\r\nexport function useAdmin() {\r\n  const { user } = useAuth();\r\n  \r\n  const isAdmin = user?.email === 'kezia@fiscal.com';\r\n  \r\n  return {\r\n    isAdmin,\r\n    adminEmail: 'kezia@fiscal.com'\r\n  };\r\n}\r\n"
+        }
+    ]
+}

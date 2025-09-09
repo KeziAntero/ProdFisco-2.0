@@ -1,0 +1,16 @@
+<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background circle (main coin) -->
+  <circle cx="12" cy="20" r="10" fill="#16a34a" stroke="#15803d" stroke-width="1"/>
+  
+  <!-- Dollar sign in main coin -->
+  <text x="12" y="26" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="14" font-weight="bold">$</text>
+  
+  <!-- Stack of smaller coins -->
+  <circle cx="28" cy="18" r="6" fill="none" stroke="#16a34a" stroke-width="1.5"/>
+  <circle cx="28" cy="22" r="6" fill="none" stroke="#16a34a" stroke-width="1.5"/>
+  <circle cx="28" cy="26" r="6" fill="none" stroke="#16a34a" stroke-width="1.5"/>
+  
+  <!-- Growth arrow/chart -->
+  <path d="M8 8 L15 5 L22 8 L30 3" stroke="#16a34a" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M30 3 L28 1 L30 3 L28 5" stroke="#16a34a" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

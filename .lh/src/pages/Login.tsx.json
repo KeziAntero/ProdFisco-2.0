@@ -1,0 +1,22 @@
+{
+    "sourceFile": "src/pages/Login.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1757096854019,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1757097612573,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -38,8 +38,12 @@\n             <CardTitle className=\"text-2xl font-bold\">ProdFisco</CardTitle>\n           </div>\n           <CardDescription>\n             Sistema de Gestão de Produtividade Fiscal\n+            <br />\n+            <a href=\"/setup-admin\" className=\"text-primary hover:underline text-sm mt-2 inline-block\">\n+              Setup Administrador\n+            </a>\n           </CardDescription>\n         </CardHeader>\n         <CardContent>\n           <Tabs defaultValue=\"login\" className=\"w-full\">\n"
+                }
+            ],
+            "date": 1757096854019,
+            "name": "Commit-0",
+            "content": "import { useState } from 'react';\nimport { useNavigate } from 'react-router-dom';\nimport { Button } from '@/components/ui/button';\nimport { Input } from '@/components/ui/input';\nimport { Label } from '@/components/ui/label';\nimport { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';\nimport { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';\nimport { useAuth } from '@/hooks/useAuth';\n\nexport default function Login() {\n  const [email, setEmail] = useState('');\n  const [password, setPassword] = useState('');\n  const [isLoading, setIsLoading] = useState(false);\n  const { signIn } = useAuth();\n  const navigate = useNavigate();\n\n  const handleSignIn = async (e: React.FormEvent) => {\n    e.preventDefault();\n    setIsLoading(true);\n    \n    try {\n      await signIn(email, password);\n      navigate('/');\n    } catch (error) {\n      // Erro já tratado no hook\n    } finally {\n      setIsLoading(false);\n    }\n  };\n\n\n  return (\n    <div className=\"min-h-screen flex items-center justify-center bg-background p-4\">\n      <Card className=\"w-full max-w-md\">\n        <CardHeader className=\"text-center\">\n          <div className=\"flex items-center justify-center gap-3 mb-4\">\n            <img src=\"/logo.svg\" alt=\"ProdFisco Logo\" className=\"w-12 h-12\" />\n            <CardTitle className=\"text-2xl font-bold\">ProdFisco</CardTitle>\n          </div>\n          <CardDescription>\n            Sistema de Gestão de Produtividade Fiscal\n          </CardDescription>\n        </CardHeader>\n        <CardContent>\n          <Tabs defaultValue=\"login\" className=\"w-full\">\n            <TabsList className=\"grid w-full grid-cols-1\">\n              <TabsTrigger value=\"login\">Login</TabsTrigger>\n            </TabsList>\n            \n            <TabsContent value=\"login\">\n              <form onSubmit={handleSignIn} className=\"space-y-4\">\n                <div className=\"space-y-2\">\n                  <Label htmlFor=\"email\">Email</Label>\n                  <Input\n                    id=\"email\"\n                    type=\"email\"\n                    placeholder=\"seu@email.com\"\n                    value={email}\n                    onChange={(e) => setEmail(e.target.value)}\n                    required\n                  />\n                </div>\n                \n                <div className=\"space-y-2\">\n                  <Label htmlFor=\"password\">Senha</Label>\n                  <Input\n                    id=\"password\"\n                    type=\"password\"\n                    placeholder=\"••••••••\"\n                    value={password}\n                    onChange={(e) => setPassword(e.target.value)}\n                    required\n                  />\n                </div>\n                \n                <Button type=\"submit\" className=\"w-full\" disabled={isLoading}>\n                  {isLoading ? \"Entrando...\" : \"Entrar\"}\n                </Button>\n              </form>\n            </TabsContent>\n          </Tabs>\n        </CardContent>\n      </Card>\n    </div>\n  );\n}"
+        }
+    ]
+}

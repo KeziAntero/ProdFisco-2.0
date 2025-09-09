@@ -1,0 +1,18 @@
+{
+    "sourceFile": "src/hooks/useAdminRegistros.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1757097391503,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1757097391503,
+            "name": "Commit-0",
+            "content": "import { useQuery } from '@tanstack/react-query';\r\nimport { supabase } from '@/integrations/supabase/client';\r\n\r\nexport function useAdminRegistros(filters?: { mes?: string; ano?: string }) {\r\n  return useQuery({\r\n    queryKey: ['admin-registros', filters],\r\n    queryFn: async () => {\r\n      let query = supabase\r\n        .from('registros_produtividade')\r\n        .select(`\r\n          *,\r\n          user:profiles!registros_produtividade_user_id_fkey (\r\n            nome,\r\n            login,\r\n            matricula\r\n          ),\r\n          itens_servico (\r\n            *,\r\n            servico:servicos (\r\n              descricao,\r\n              pontuacao_base\r\n            )\r\n          )\r\n        `)\r\n        .eq('situacao', 'ativo')\r\n        .order('data_criacao', { ascending: false });\r\n\r\n      if (filters?.mes && filters?.mes !== 'all' && filters?.ano) {\r\n        const competencia = `${filters.mes.padStart(2, '0')}/${filters.ano}`;\r\n        query = query.eq('competencia', competencia);\r\n      }\r\n\r\n      const { data, error } = await query;\r\n\r\n      if (error) throw error;\r\n      return data || [];\r\n    },\r\n  });\r\n}\r\n"
+        }
+    ]
+}

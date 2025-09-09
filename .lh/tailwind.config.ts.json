@@ -1,0 +1,18 @@
+{
+    "sourceFile": "tailwind.config.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1757095714161,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1757095714161,
+            "name": "Commit-0",
+            "content": "import type { Config } from \"tailwindcss\";\n\nexport default {\n\tdarkMode: [\"class\"],\n\tcontent: [\n\t\t\"./pages/**/*.{ts,tsx}\",\n\t\t\"./components/**/*.{ts,tsx}\",\n\t\t\"./app/**/*.{ts,tsx}\",\n\t\t\"./src/**/*.{ts,tsx}\",\n\t],\n\tprefix: \"\",\n\ttheme: {\n\t\tcontainer: {\n\t\t\tcenter: true,\n\t\t\tpadding: '2rem',\n\t\t\tscreens: {\n\t\t\t\t'2xl': '1900px'\n\t\t\t}\n\t\t},\n\t\textend: {\n\t\t\tcolors: {\n\t\t\t\tborder: 'hsl(var(--border))',\n\t\t\t\tinput: 'hsl(var(--input))',\n\t\t\t\tring: 'hsl(var(--ring))',\n\t\t\t\tbackground: 'hsl(var(--background))',\n\t\t\t\tforeground: 'hsl(var(--foreground))',\n\t\t\t\tprimary: {\n\t\t\t\t\tDEFAULT: 'hsl(var(--primary))',\n\t\t\t\t\tforeground: 'hsl(var(--primary-foreground))'\n\t\t\t\t},\n\t\t\t\tsecondary: {\n\t\t\t\t\tDEFAULT: 'hsl(var(--secondary))',\n\t\t\t\t\tforeground: 'hsl(var(--secondary-foreground))'\n\t\t\t\t},\n\t\t\t\tdestructive: {\n\t\t\t\t\tDEFAULT: 'hsl(var(--destructive))',\n\t\t\t\t\tforeground: 'hsl(var(--destructive-foreground))'\n\t\t\t\t},\n\t\t\t\tmuted: {\n\t\t\t\t\tDEFAULT: 'hsl(var(--muted))',\n\t\t\t\t\tforeground: 'hsl(var(--muted-foreground))'\n\t\t\t\t},\n\t\t\t\taccent: {\n\t\t\t\t\tDEFAULT: 'hsl(var(--accent))',\n\t\t\t\t\tforeground: 'hsl(var(--accent-foreground))'\n\t\t\t\t},\n\t\t\t\tpopover: {\n\t\t\t\t\tDEFAULT: 'hsl(var(--popover))',\n\t\t\t\t\tforeground: 'hsl(var(--popover-foreground))'\n\t\t\t\t},\n\t\t\t\tcard: {\n\t\t\t\t\tDEFAULT: 'hsl(var(--card))',\n\t\t\t\t\tforeground: 'hsl(var(--card-foreground))'\n\t\t\t\t},\n\t\t\t\tsidebar: {\n\t\t\t\t\tDEFAULT: 'hsl(var(--sidebar-background))',\n\t\t\t\t\tforeground: 'hsl(var(--sidebar-foreground))',\n\t\t\t\t\tprimary: 'hsl(var(--sidebar-primary))',\n\t\t\t\t\t'primary-foreground': 'hsl(var(--sidebar-primary-foreground))',\n\t\t\t\t\taccent: 'hsl(var(--sidebar-accent))',\n\t\t\t\t\t'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',\n\t\t\t\t\tborder: 'hsl(var(--sidebar-border))',\n\t\t\t\t\tring: 'hsl(var(--sidebar-ring))'\n\t\t\t\t}\n\t\t\t},\n\t\t\tborderRadius: {\n\t\t\t\tlg: 'var(--radius)',\n\t\t\t\tmd: 'calc(var(--radius) - 2px)',\n\t\t\t\tsm: 'calc(var(--radius) - 4px)'\n\t\t\t},\n\t\t\tkeyframes: {\n\t\t\t\t'accordion-down': {\n\t\t\t\t\tfrom: {\n\t\t\t\t\t\theight: '0'\n\t\t\t\t\t},\n\t\t\t\t\tto: {\n\t\t\t\t\t\theight: 'var(--radix-accordion-content-height)'\n\t\t\t\t\t}\n\t\t\t\t},\n\t\t\t\t'accordion-up': {\n\t\t\t\t\tfrom: {\n\t\t\t\t\t\theight: 'var(--radix-accordion-content-height)'\n\t\t\t\t\t},\n\t\t\t\t\tto: {\n\t\t\t\t\t\theight: '0'\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t},\n\t\t\tanimation: {\n\t\t\t\t'accordion-down': 'accordion-down 0.2s ease-out',\n\t\t\t\t'accordion-up': 'accordion-up 0.2s ease-out'\n\t\t\t}\n\t\t}\n\t},\n\tplugins: [require(\"tailwindcss-animate\")],\n} satisfies Config;\n"
+        }
+    ]
+}

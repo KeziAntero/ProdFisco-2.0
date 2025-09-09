@@ -1,0 +1,26 @@
+{
+    "sourceFile": "src/components/Layout.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1757095661568,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1757095714167,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import { AppHeader } from \"@/components/AppHeader\";\n \n export default function Layout({ children }: { children: React.ReactNode }) {\n   return (\n-    <div className=\"min-h-screen w-full\">\n+    <div className=\"min-h-screen w-full max-w-[1900px] mx-auto\">\n       <AppHeader />\n       <main className=\"p-6\">\n         {children}\n       </main>\n"
+                },
+                {
+                    "date": 1757096041399,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,10 +3,12 @@\n export default function Layout({ children }: { children: React.ReactNode }) {\n   return (\n     <div className=\"min-h-screen w-full max-w-[1900px] mx-auto\">\n       <AppHeader />\n-      <main className=\"p-6\">\n-        {children}\n+      <main className=\"p-4 sm:p-6\">\n+        <div className=\"max-w-7xl mx-auto\">\n+          {children}\n+        </div>\n       </main>\n     </div>\n   );\n }\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1757095661568,
+            "name": "Commit-0",
+            "content": "import { AppHeader } from \"@/components/AppHeader\";\n\nexport default function Layout({ children }: { children: React.ReactNode }) {\n  return (\n    <div className=\"min-h-screen w-full\">\n      <AppHeader />\n      <main className=\"p-6\">\n        {children}\n      </main>\n    </div>\n  );\n}"
+        }
+    ]
+}
