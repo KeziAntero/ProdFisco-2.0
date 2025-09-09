@@ -1,4 +1,4 @@
-# Sistema de Produtividade (PRT)
+# Sistema de Produtividade (ProdFisco)
 
 Sistema web para gerenciamento de registros de produtividade de auditores fiscais, desenvolvido com React, TypeScript, Tailwind CSS e Supabase.
 
@@ -32,7 +32,7 @@ Sistema web para gerenciamento de registros de produtividade de auditores fiscai
 1. **Clone o repositório**
 ```bash
 git clone <URL_DO_REPOSITORIO>
-cd ProdFisco
+cd ProdFisco-2.0
 ```
 
 2. **Instale as dependências**
@@ -126,7 +126,4 @@ src/
 4. Push para a branch
 5. Abra um Pull Request
 
-## 📝 Licença
-
-Este projeto está sob a licença MIT. Veja o arquivo LICENSE para mais detalhes.
 
